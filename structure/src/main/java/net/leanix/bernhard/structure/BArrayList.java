@@ -25,14 +25,14 @@ public class BArrayList {
         String[] temparray = new String[size + 1];
         temparray[size] = aString;
 
-        if (first.data.length < 1) {
-            first.data = temparray;
+        if (size < 1) {
+            elements[0] = aString;
         }
         else {
             for (int i = 0; i < size; i++) {
-                temparray[i] = first.data[i];
+                temparray[i] = elements[i];
             }
-            first.data = temparray;
+            elements = temparray;
         }
         size++;
     }
@@ -42,7 +42,7 @@ public class BArrayList {
             return null;
         }
 
-        String result = first.data[index];
+        String result = elements[index];
         return (result != null) ? result : null;
     }
 
@@ -50,14 +50,14 @@ public class BArrayList {
         if (size == 0 || toBeDeletedElement < 0 || toBeDeletedElement > size - 1) {
             return;
         }
-        String[] tempArray = new String[first.data.length - 1];
-        first.data[toBeDeletedElement] = null;
+        String[] tempArray = new String[elements.length - 1];
+        elements[toBeDeletedElement] = null;
         int indexOrigin = 0;
         int indexTarget = 0;
 
         while (indexOrigin < size) {
-            if (first.data[indexOrigin] != null) {
-                tempArray[indexTarget] = first.data[indexOrigin];
+            if (elements[indexOrigin] != null) {
+                tempArray[indexTarget] = elements[indexOrigin];
                 indexOrigin++;
                 indexTarget++;
             }
@@ -65,13 +65,12 @@ public class BArrayList {
                 indexOrigin++;
             }
         }
-        first.data = tempArray;
+        elements = tempArray;
         size--;
     }
 
     public void clear() {
-        BElement temp = new BElement();
-        first = temp;
+        BArrayList temp = new BArrayList();
         size = 0;
     }
 
@@ -93,7 +92,7 @@ public class BArrayList {
         int indexTarget = 0;
         while (indexOrigin < size) {
             if (indexTarget != insertIndex) {
-                tempArray[indexTarget] = first.data[indexOrigin];
+                tempArray[indexTarget] = elements[indexOrigin];
                 indexOrigin++;
                 indexTarget++;
                 }
@@ -101,7 +100,7 @@ public class BArrayList {
                 indexTarget++;
             }
         }
-        first.data = tempArray;
+        elements = tempArray;
         size++;
     }
 }
