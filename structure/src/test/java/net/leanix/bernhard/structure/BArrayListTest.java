@@ -230,4 +230,15 @@ public class BArrayListTest {
         assertThat(l.get(1)).isEqualTo("one");
     }
 
+    @Test
+    public void add_initializArrayWithZero() {
+        // given
+        l = new BArrayList(0);
+
+        // when
+        l.add("one");
+
+        // then
+        assertThat(l.get(0)).isEqualTo("one");
+    }
 }

@@ -16,7 +16,6 @@ public class BBinaryTree {
         result.add(root.data);
         breadthFirstTraversal(root, result);
         return result;
-
     }
 
     private void breadthFirstTraversal(Node currentNode, List<String> alreadyVisited) {
@@ -36,6 +35,28 @@ public class BBinaryTree {
         breadthFirstTraversal(currentNode.left, alreadyVisited);
         breadthFirstTraversal(currentNode.right, alreadyVisited);
 
+    }
+
+    public List<String> depthFirst() {
+        if (root == null) {
+            return new ArrayList<>();
+        }
+        List<String> result = new ArrayList<>();
+        depthFirstTraversal(root, result);
+        return result;
+    }
+
+    private void depthFirstTraversal(Node currentNode, List<String> alreadyVisited) {
+        if (currentNode == null) {
+            return; // Abbruch der Rekursion
+        }
+
+        // Add to list
+        alreadyVisited.add(currentNode.data);
+
+        // Proceed with left/right subtree
+        depthFirstTraversal(currentNode.left, alreadyVisited);
+        depthFirstTraversal(currentNode.right, alreadyVisited);
     }
 
     public void setRoot(Node root) {
@@ -73,6 +94,11 @@ public class BBinaryTree {
 
         public void setData(String data) {
             this.data = data;
+        }
+
+        @Override
+        public String toString() {
+            return data;
         }
     }
 }

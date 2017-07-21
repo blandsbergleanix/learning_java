@@ -22,20 +22,34 @@ public class BArrayList {
     }
 
     public void add(String aString) {
-        String[] temparray = new String[size + 1];
-        temparray[size] = aString;
+        extendArray();
 
         if (size < 1) {
             elements[0] = aString;
         }
         else {
+            elements[size] = aString;
+        }
+
+        size++;
+    }
+
+    public void extendArray() {
+        if (elements.length == 0) {
+            elements = new String[10];
+            return;
+        }
+
+
+        if (elements.length == size) {
+            String[] temparray = new String[elements.length * 2];
             for (int i = 0; i < size; i++) {
                 temparray[i] = elements[i];
             }
             elements = temparray;
         }
-        size++;
     }
+
 
     public String get(int index) {
         if (index > size - 1) {
@@ -70,7 +84,7 @@ public class BArrayList {
     }
 
     public void clear() {
-        BArrayList temp = new BArrayList();
+        elements = new String[10];
         size = 0;
     }
 
@@ -94,11 +108,8 @@ public class BArrayList {
             if (indexTarget != insertIndex) {
                 tempArray[indexTarget] = elements[indexOrigin];
                 indexOrigin++;
-                indexTarget++;
-                }
-            else {
-                indexTarget++;
             }
+            indexTarget++;
         }
         elements = tempArray;
         size++;
