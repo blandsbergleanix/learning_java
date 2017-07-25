@@ -63,6 +63,48 @@ public class BBinaryTree {
         this.root = root;
     }
 
+    public List<String> infixFirst() {
+        if (root == null) {
+            return new ArrayList<>();
+        }
+        List<String> result = new ArrayList<>();
+        infixFirstTraversal(root, result);
+        return result;
+    }
+
+    public void infixFirstTraversal(Node currentNode, List<String> alreadyVisited) {
+        if (currentNode == null) {
+            return; // Abbruch der Rekursion
+        }
+        // Proceed with left subtree
+        infixFirstTraversal(currentNode.left, alreadyVisited);
+        // Add to list
+        alreadyVisited.add(currentNode.data);
+        // Proceed with right subtree
+        infixFirstTraversal(currentNode.right, alreadyVisited);
+        }
+
+    public List<String> polishNotationFirst() {
+        if (root == null) {
+            return new ArrayList<>();
+        }
+        List<String> result = new ArrayList<>();
+        infixFirstTraversal(root, result);
+        return result;
+    }
+
+    public void polishNotationFirstTraversal(Node currentNode, List<String> alreadyVisited) {
+        if (currentNode == null) {
+            return; // Abbruch der Rekursion
+        }
+        // Proceed with left subtree
+        infixFirstTraversal(currentNode.left, alreadyVisited);
+        // Proceed with right subtree
+        infixFirstTraversal(currentNode.right, alreadyVisited);
+        // Add to list
+        alreadyVisited.add(currentNode.data);
+    }
+
     public static class Node {
         private String data;
         private Node left;
