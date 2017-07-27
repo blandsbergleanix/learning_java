@@ -8,7 +8,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class BArrayListTest {
 
-    BArrayList l;
+    private BArrayList l;
 
     @Before
     public void setup() {

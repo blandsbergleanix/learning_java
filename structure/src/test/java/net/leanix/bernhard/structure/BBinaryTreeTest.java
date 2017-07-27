@@ -9,7 +9,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class BBinaryTreeTest {
 
-    BBinaryTree b;
+    private BBinaryTree b;
 
     @Before
     public void setup() {
@@ -252,7 +252,7 @@ public class BBinaryTreeTest {
     }
 
     @Test
-    public void polishNotationFirst_complexTree_shouldReturnCorrectTraversal() {
+    public void reversePolishNotationFirst_complexTree_shouldReturnCorrectTraversal() {
         // given
         BBinaryTree.Node root = new BBinaryTree.Node("Root");
         b.setRoot(root);
@@ -277,6 +277,6 @@ public class BBinaryTreeTest {
         List<String> result = b.polishNotationFirst();
 
         // then
-        assertThat(result).containsExactly("Root/Left/Left", "Root/Left/Right", "Root/Left");
+        assertThat(result).containsExactly("Root/Left/Left", "Root/Left/Right", "Root/Left", "Root/Right/Left/Left/Left", "Root/Right/Left/Left", "Root/Right/Left/Right/Right", "Root/Right/Left/Right", "Root/Right/Left", "Root/Right", "Root");
     }
 }

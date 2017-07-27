@@ -82,14 +82,14 @@ public class BBinaryTree {
         alreadyVisited.add(currentNode.data);
         // Proceed with right subtree
         infixFirstTraversal(currentNode.right, alreadyVisited);
-        }
+    }
 
     public List<String> polishNotationFirst() {
         if (root == null) {
             return new ArrayList<>();
         }
         List<String> result = new ArrayList<>();
-        infixFirstTraversal(root, result);
+        polishNotationFirstTraversal(root, result);
         return result;
     }
 
@@ -98,9 +98,9 @@ public class BBinaryTree {
             return; // Abbruch der Rekursion
         }
         // Proceed with left subtree
-        infixFirstTraversal(currentNode.left, alreadyVisited);
+        polishNotationFirstTraversal(currentNode.left, alreadyVisited);
         // Proceed with right subtree
-        infixFirstTraversal(currentNode.right, alreadyVisited);
+        polishNotationFirstTraversal(currentNode.right, alreadyVisited);
         // Add to list
         alreadyVisited.add(currentNode.data);
     }
