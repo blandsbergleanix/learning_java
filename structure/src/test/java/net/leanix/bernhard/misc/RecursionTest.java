@@ -119,7 +119,7 @@ public class RecursionTest {
 
 
     @Test
-    public void times_0And0() {
+    public void prod_0And0() {
         // given
         int a = 0;
         int b = 0;
@@ -132,7 +132,7 @@ public class RecursionTest {
     }
 
     @Test
-    public void times_0And1() {
+    public void prod_0And1() {
         // given
         int a = 0;
         int b = 1;
@@ -145,7 +145,7 @@ public class RecursionTest {
     }
 
     @Test
-    public void times_1And0() {
+    public void prod_1And0() {
         // given
         int a = 1;
         int b = 0;
@@ -158,7 +158,7 @@ public class RecursionTest {
     }
 
     @Test
-    public void times_1And1() {
+    public void prod_1And1() {
         // given
         int a = 1;
         int b = 1;
@@ -171,7 +171,7 @@ public class RecursionTest {
     }
 
     @Test
-    public void times_1And2() {
+    public void prod_1And2() {
         // given
         int a = 1;
         int b = 2;
@@ -184,7 +184,7 @@ public class RecursionTest {
     }
 
     @Test
-    public void times_2And1() {
+    public void prod_2And1() {
         // given
         int a = 2;
         int b = 1;
@@ -197,7 +197,7 @@ public class RecursionTest {
     }
 
     @Test
-    public void times_6And7() {
+    public void prod_6And7() {
         // given
         int a = 6;
         int b = 7;
@@ -210,7 +210,7 @@ public class RecursionTest {
     }
 
     @Test
-    public void times_Minus6And7() {
+    public void prod_Minus6And7() {
         // given
         int a = -6;
         int b = 7;
@@ -223,7 +223,7 @@ public class RecursionTest {
     }
 
     @Test
-    public void times_Minus6AndMinus7() {
+    public void prod_Minus6AndMinus7() {
         // given
         int a = -6;
         int b = -7;
@@ -236,7 +236,7 @@ public class RecursionTest {
     }
 
     @Test
-    public void times_6AndMinus7() {
+    public void prod_6AndMinus7() {
         // given
         int a = 6;
         int b = -7;
@@ -271,20 +271,30 @@ public class RecursionTest {
         int p = r.pow(a, b);
 
         // then
-        assertThat(p).isEqualTo(-256);
+        assertThat(p).isEqualTo(256);
     }
 
     @Test
-    public void pow_2AndMinus8_ShouldDoNothing() {
+    public void pow_Minus2And9() {
+        // given
+        int a = -2;
+        int b = 9;
+
+        // when
+        int p = r.pow(a, b);
+
+        // then
+        assertThat(p).isEqualTo(-512);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void pow_2AndMinus8_ShouldThrowException() {
         // given
         int a = 2;
         int b = -8;
 
         // when
         int p = r.pow(a, b);
-
-        // then
-        assertThat(p).isEqualTo(a);
     }
 
     @Test
