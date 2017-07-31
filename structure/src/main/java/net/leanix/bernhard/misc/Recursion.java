@@ -11,28 +11,10 @@ public class Recursion {
         if ( a == 0 ) {
             return b;
         }
-        if (b > a) {
-            int temp = a;
-            b = a;
-            a = temp;
-
-        }
-        boolean negativecheck = false;
-        // both numbers negative
-        if (a < 0 && b < 0) {
-            a = Math.abs(a);
-            b = Math.abs(b);
-            negativecheck = true;
-        }
-        //only one number negative
-
         if (b < 0) {
             return sum(a, b + 1) - 1;
         }
 
-        if (negativecheck) {
-            return (sum(a, b - 1) + 1) * (- 1);
-        }
         return sum(a, b - 1) + 1;
     }
 
@@ -76,7 +58,6 @@ public class Recursion {
         if (a == 0) {
             return 0;
         }
-
         if (b < 0) {
             return a;
         }
