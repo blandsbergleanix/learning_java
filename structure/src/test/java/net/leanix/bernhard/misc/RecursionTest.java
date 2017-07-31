@@ -248,8 +248,6 @@ public class RecursionTest {
         assertThat(p).isEqualTo(-42);
     }
 
-    // TODO: add other reasonable tests
-
     @Test
     public void pow_2And8() {
         // given
@@ -288,9 +286,6 @@ public class RecursionTest {
         // then
         assertThat(p).isEqualTo(a);
     }
-
-
-    // TODO: add other reasonable tests
 
     @Test
     public void fac_10() {
