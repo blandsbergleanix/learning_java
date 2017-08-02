@@ -5,12 +5,12 @@ import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class RecursionTest {
-    private Recursion r;
+public class IterativeTest {
+    private Iterative i;
 
     @Before
     public void setUp() throws Exception {
-       r = new Recursion();
+        i = new Iterative();
     }
 
     @Test
@@ -20,7 +20,7 @@ public class RecursionTest {
         int b = 0;
 
         // when
-        int s = r.sum(a, b);
+        int s = i.sumi(a, b);
 
         // then
         assertThat(s).isEqualTo(0);
@@ -33,7 +33,7 @@ public class RecursionTest {
         int b = 1;
 
         // when
-        int s = r.sum(a, b);
+        int s = i.sumi(a, b);
 
         // then
         assertThat(s).isEqualTo(1);
@@ -46,7 +46,7 @@ public class RecursionTest {
         int b = 1;
 
         // when
-        int s = r.sum(a, b);
+        int s = i.sumi(a, b);
 
         // then
         assertThat(s).isEqualTo(2);
@@ -59,7 +59,7 @@ public class RecursionTest {
         int b = 0;
 
         // when
-        int s = r.sum(a, b);
+        int s = i.sumi(a, b);
 
         // then
         assertThat(s).isEqualTo(1);
@@ -72,7 +72,7 @@ public class RecursionTest {
         int b = 2;
 
         // when
-        int s = r.sum(a, b);
+        int s = i.sumi(a, b);
 
         // then
         assertThat(s).isEqualTo(3);
@@ -85,7 +85,7 @@ public class RecursionTest {
         int b = 2;
 
         // when
-        int s = r.sum(a, b);
+        int s = i.sumi(a, b);
 
         // then
         assertThat(s).isEqualTo(-2);
@@ -98,7 +98,7 @@ public class RecursionTest {
         int b = -4;
 
         // when
-        int s = r.sum(a, b);
+        int s = i.sumi(a, b);
 
         // then
         assertThat(s).isEqualTo(-3);
@@ -111,7 +111,7 @@ public class RecursionTest {
         int b = -2;
 
         // when
-        int s = r.sum(a, b);
+        int s = i.sumi(a, b);
 
         // then
         assertThat(s).isEqualTo(-3);
@@ -125,7 +125,7 @@ public class RecursionTest {
         int b = 0;
 
         // when
-        int p = r.prod(a, b);
+        int p = i.prodi(a, b);
 
         // then
         assertThat(p).isEqualTo(0);
@@ -138,7 +138,7 @@ public class RecursionTest {
         int b = 1;
 
         // when
-        int p = r.prod(a, b);
+        int p = i.prodi(a, b);
 
         // then
         assertThat(p).isEqualTo(0);
@@ -151,7 +151,7 @@ public class RecursionTest {
         int b = 0;
 
         // when
-        int p = r.prod(a, b);
+        int p = i.prodi(a, b);
 
         // then
         assertThat(p).isEqualTo(0);
@@ -164,7 +164,7 @@ public class RecursionTest {
         int b = 1;
 
         // when
-        int p = r.prod(a, b);
+        int p = i.prodi(a, b);
 
         // then
         assertThat(p).isEqualTo(1);
@@ -177,7 +177,7 @@ public class RecursionTest {
         int b = 2;
 
         // when
-        int p = r.prod(a, b);
+        int p = i.prodi(a, b);
 
         // then
         assertThat(p).isEqualTo(2);
@@ -190,7 +190,7 @@ public class RecursionTest {
         int b = 1;
 
         // when
-        int p = r.prod(a, b);
+        int p = i.prodi(a, b);
 
         // then
         assertThat(p).isEqualTo(2);
@@ -203,7 +203,7 @@ public class RecursionTest {
         int b = 7;
 
         // when
-        int p = r.prod(a, b);
+        int p = i.prodi(a, b);
 
         // then
         assertThat(p).isEqualTo(42);
@@ -216,7 +216,7 @@ public class RecursionTest {
         int b = 7;
 
         // when
-        int p = r.prod(a, b);
+        int p = i.prodi(a, b);
 
         // then
         assertThat(p).isEqualTo(-42);
@@ -229,7 +229,7 @@ public class RecursionTest {
         int b = -7;
 
         // when
-        int p = r.prod(a, b);
+        int p = i.prodi(a, b);
 
         // then
         assertThat(p).isEqualTo(42);
@@ -242,7 +242,7 @@ public class RecursionTest {
         int b = -7;
 
         // when
-        int p = r.prod(a, b);
+        int p = i.prodi(a, b);
 
         // then
         assertThat(p).isEqualTo(-42);
@@ -255,7 +255,7 @@ public class RecursionTest {
         int b = 8;
 
         // when
-        int p = r.pow(a, b);
+        int p = i.powi(a, b);
 
         // then
         assertThat(p).isEqualTo(256);
@@ -268,7 +268,7 @@ public class RecursionTest {
         int b = 8;
 
         // when
-        int p = r.pow(a, b);
+        int p = i.powi(a, b);
 
         // then
         assertThat(p).isEqualTo(256);
@@ -281,7 +281,7 @@ public class RecursionTest {
         int b = 9;
 
         // when
-        int p = r.pow(a, b);
+        int p = i.powi(a, b);
 
         // then
         assertThat(p).isEqualTo(-512);
@@ -294,7 +294,7 @@ public class RecursionTest {
         int b = -8;
 
         // when
-        int p = r.pow(a, b);
+        int p = i.powi(a, b);
     }
 
     @Test
@@ -303,19 +303,19 @@ public class RecursionTest {
         int a = 10;
 
         // when
-        int f = r.fac(a);
+        int f = i.faci(a);
 
         // then
         assertThat(f).isEqualTo(3628800);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test (expected = IllegalArgumentException.class)
     public void fac_Minus10_ShouldThrowException() {
         // given
         int a = -10;
 
         // when
-        int f = r.fac(a);
+        int f = i.faci(a);
 
         // then
     }
@@ -326,19 +326,19 @@ public class RecursionTest {
         int a = 0;
 
         // when
-        int f = r.fac(a);
+        int f = i.faci(a);
 
         // then
         assertThat(f).isEqualTo(0);
     }
 
     @Test
-    public void fib_36() {
+    public void fibi_36() {
         // given
         int a = 36;
 
         // when
-        int f = r.fib(a);
+        int f = i.fibi(a);
 
         // then
         assertThat(f).isEqualTo(14930352);
